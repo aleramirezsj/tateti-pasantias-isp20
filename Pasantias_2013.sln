@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tarea_ubicua_n1", "tarea_ubicua_n1\tarea_ubicua_n1.csproj", "{365FFA95-1487-4412-98B9-D7392888599F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tateti_isp20", "tateti_isp20\tateti_isp20.csproj", "{4B29F581-4455-4278-981A-FBD34FF23EAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{365FFA95-1487-4412-98B9-D7392888599F}.Debug|x86.ActiveCfg = Debug|x86
+		{365FFA95-1487-4412-98B9-D7392888599F}.Debug|x86.Build.0 = Debug|x86
+		{365FFA95-1487-4412-98B9-D7392888599F}.Release|x86.ActiveCfg = Release|x86
+		{365FFA95-1487-4412-98B9-D7392888599F}.Release|x86.Build.0 = Release|x86
+		{4B29F581-4455-4278-981A-FBD34FF23EAA}.Debug|x86.ActiveCfg = Debug|x86
+		{4B29F581-4455-4278-981A-FBD34FF23EAA}.Debug|x86.Build.0 = Debug|x86
+		{4B29F581-4455-4278-981A-FBD34FF23EAA}.Release|x86.ActiveCfg = Release|x86
+		{4B29F581-4455-4278-981A-FBD34FF23EAA}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = tateti_isp20\tateti_isp20.csproj
+	EndGlobalSection
+EndGlobal
