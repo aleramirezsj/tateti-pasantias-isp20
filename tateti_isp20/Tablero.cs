@@ -7,6 +7,7 @@ namespace tateti_isp20
 	{
 		public Hashtable posiciones;
 
+		//método constructor
 		public Tablero ()
 		{
 			posiciones= new Hashtable();
