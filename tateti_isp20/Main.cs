@@ -6,7 +6,9 @@ namespace tateti_isp20
 	{
 		public static void Main (string[] args)
 		{
+			//declarando e inicializando el juego
 			Juego juego=new Juego();
+			//variables auxiliares necesarias
 			int jugador_actual=1;
 			int ficha_actual=1;
 			int ficha_a_mover=0;
@@ -44,6 +46,7 @@ namespace tateti_isp20
 					juego.Jugar(jugador_actual,ficha_actual,posicion_elegida);
 					//cambio de jugador
 				}
+				//comprobaciones varias
 				jugador_actual++;
 				if (jugador_actual==3)
 				{
