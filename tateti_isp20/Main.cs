@@ -20,29 +20,19 @@ namespace tateti_isp20
 				//pide definir la ficha a mover
 				if (ficha_actual==0)
 				{
-					ficha_a_mover=juego.SeleccionarFicha(jugador_actual);
-					Console.Write("Jugador {0}: ingrese la posicion de la ficha {1}:",jugador_actual,ficha_a_mover);
-					posicion_elegida=Convert.ToInt32(Console.ReadLine());
+					juego.SeleccionarFicha(jugador_actual, ref ficha_a_mover);
+					juego.SeleccionarPosicion(jugador_actual,ficha_a_mover,ref posicion_elegida);
 					juego.Jugar(jugador_actual,ficha_a_mover,posicion_elegida);
 				}
 				//en las primeras 6 fichas se ejecuta
 				//esto
 				else
 				{
-					//pide ingresar el movimiento
-					Console.Write("Jugador {0}: ingrese la posicion de la ficha {1}:",jugador_actual,ficha_actual);
-					try
-					{
-						posicion_elegida=Convert.ToInt32(Console.ReadLine());
-					}
-					catch
-					{
-						Console.WriteLine("Error, valor incorrecto presione una tecla para continuar");
-						Console.ReadKey();
-						continue;
-					}
+					juego.SeleccionarPosicion(jugador_actual,ficha_actual, ref posicion_elegida);
 					//almacenar el movimiento en el tablero y en las fichas
 					//del jugador
+					//Console.WriteLine("posicion elegida vale {0}", posicion_elegida);
+					//Console.ReadKey();
 					juego.Jugar(jugador_actual,ficha_actual,posicion_elegida);
 					//cambio de jugador
 				}

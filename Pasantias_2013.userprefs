@@ -1,20 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="tateti_isp20/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="tateti_isp20/Tablero.cs">
     <Files>
-      <File FileName="tateti_isp20/Tablero.cs" Line="21" Column="20" />
-      <File FileName="tateti_isp20/Main.cs" Line="23" Column="20" />
-      <File FileName="tateti_isp20/Juego.cs" Line="31" Column="30" />
+      <File FileName="tateti_isp20/Tablero.cs" Line="6" Column="22" />
+      <File FileName="tateti_isp20/Main.cs" Line="24" Column="6" />
+      <File FileName="tateti_isp20/Juego.cs" Line="9" Column="23" />
       <File FileName="tateti_isp20/Jugador.cs" Line="15" Column="6" />
       <File FileName="tarea_ubicua_n1/Main.cs" Line="1" Column="1" />
-      <File FileName="tarea_ubicua_n1/SistemaClientes.cs" Line="49" Column="12" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="tarea_ubicua_n1" expanded="True" />
           <Node name="tateti_isp20" expanded="True">
-            <Node name="Main.cs" selected="True" />
+            <Node name="Tablero.cs" selected="True" />
           </Node>
         </State>
       </Pad>
