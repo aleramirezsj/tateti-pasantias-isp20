@@ -9,6 +9,8 @@ namespace tateti_isp20
 		private Jugador jugador1;
 		private Jugador jugador2;
 		int[,] movimientos_validos;
+		int[,] jugadas_ganadoras;
+
 
 
 		public Juego ()
@@ -17,6 +19,8 @@ namespace tateti_isp20
 			jugador1 = new Jugador ("X");
 			jugador2 = new Jugador ("O");
 			movimientos_validos= new int[10,9];
+			jugadas_ganadoras= new int[8,3];
+			//movim_validos[posicion_ficha,nro_movimiento]=posicion_valida
 			movimientos_validos[1,1]=2;
 			movimientos_validos[1,2]=5;
 			movimientos_validos[1,3]=4;
@@ -49,6 +53,64 @@ namespace tateti_isp20
 			movimientos_validos[9,1]=8;
 			movimientos_validos[9,2]=5;
 			movimientos_validos[9,3]=6;
+			jugadas_ganadoras[0,0]=1;
+			jugadas_ganadoras[0,1]=2;
+			jugadas_ganadoras[0,2]=3;
+			jugadas_ganadoras[1,0]=3;
+			jugadas_ganadoras[1,1]=6;
+			jugadas_ganadoras[1,2]=9;
+			jugadas_ganadoras[2,0]=7;
+			jugadas_ganadoras[2,1]=8;
+			jugadas_ganadoras[2,2]=9;
+			jugadas_ganadoras[3,0]=1;
+			jugadas_ganadoras[3,1]=4;
+			jugadas_ganadoras[3,2]=7;
+			jugadas_ganadoras[4,0]=1;
+			jugadas_ganadoras[4,1]=5;
+			jugadas_ganadoras[4,2]=9;
+			jugadas_ganadoras[5,0]=2;
+			jugadas_ganadoras[5,1]=5;
+			jugadas_ganadoras[5,2]=8;
+			jugadas_ganadoras[6,0]=3;
+			jugadas_ganadoras[6,1]=5;
+			jugadas_ganadoras[6,2]=7;
+			jugadas_ganadoras[7,0]=4;
+			jugadas_ganadoras[7,1]=5;
+			jugadas_ganadoras[7,2]=6;
+
+		}
+		public bool ComprobarGanador ()
+		{
+			int acierto1=0;
+			int acierto2=0;
+			//comprobamos si gano el jugador 1
+			for (int jugada=0; jugada<8; jugada++)
+			{
+				for(int ficha=0; ficha<3; ficha++)
+				{
+					if(jugadas_ganadoras[jugada,ficha]==(int)jugador1.fichas[1])
+						acierto1++;	
+					if(jugadas_ganadoras[jugada,ficha]==(int)jugador1.fichas[2])
+						acierto1++;
+					if(jugadas_ganadoras[jugada,ficha]==(int)jugador1.fichas[3])
+						acierto1++;
+					if(jugadas_ganadoras[jugada,ficha]==(int)jugador2.fichas[1])
+						acierto2++;	
+					if(jugadas_ganadoras[jugada,ficha]==(int)jugador2.fichas[2])
+						acierto2++;
+					if(jugadas_ganadoras[jugada,ficha]==(int)jugador2.fichas[3])
+						acierto2++;
+				}
+				if (acierto1==3||acierto2==3)
+					return true;
+				else
+				{
+					//no hay un ganador que coincida con esta jugada
+					acierto1=0;
+					acierto2=0;
+				}
+			}
+			return false;
 
 
 		}
@@ -64,6 +126,11 @@ namespace tateti_isp20
 				tablero.posiciones[ficha.Value]=jugador2.tipo_ficha+ficha.Key.ToString();
 			}
 			tablero.Pintar();
+			ComprobarGanador(); 
+			/*
+				Console.WriteLine("Existe un ganador");
+				Console.ReadLine();
+			}*/
 		}
 		public void SeleccionarPosicion (int jugador, int ficha, ref int posicion_elegida)
 		{
@@ -102,6 +169,8 @@ namespace tateti_isp20
 			} else {
 				posicion_previa = (int)jugador2.fichas [ficha];
 			}
+			//si la ficha ya está colocada en el tablero
+			//comprueba si se puede realizar el movimiento
 			if (posicion_previa > 0) 
 			{
 				for (int i=1;i<9;i++)
@@ -111,7 +180,7 @@ namespace tateti_isp20
 				}
 				return false;
 			}
-
+			//algo
 			return true;
 		}
 		public bool ComprobarPosicionVacia (int posicion)
@@ -151,9 +220,12 @@ namespace tateti_isp20
 		public void Jugar (int jugador, int nroficha, int pos_elegida)
 		{
 			if (jugador == 1)
-				jugador1.fichas[nroficha] = pos_elegida;
-			else
-				jugador2.fichas[nroficha] = pos_elegida;
+				jugador1.fichas [nroficha] = pos_elegida;
+			else {
+				jugador2.fichas [nroficha] = pos_elegida;
+			}
+
+
 
 		}
 

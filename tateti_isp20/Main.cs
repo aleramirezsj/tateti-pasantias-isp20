@@ -13,9 +13,16 @@ namespace tateti_isp20
 			int ficha_actual=1;
 			int ficha_a_mover=0;
 			int posicion_elegida=0;
+
 			while (true) 
 			{
 				juego.PintarTablero();
+				if (juego.ComprobarGanador ()) 
+				{
+					Console.WriteLine ("Hay un ganador");
+					Console.ReadLine();
+					return;
+				}
 				//cuando ya se colocaron las 6 fichas
 				//pide definir la ficha a mover
 				if (ficha_actual==0)
@@ -23,6 +30,7 @@ namespace tateti_isp20
 					juego.SeleccionarFicha(jugador_actual, ref ficha_a_mover);
 					juego.SeleccionarPosicion(jugador_actual,ficha_a_mover,ref posicion_elegida);
 					juego.Jugar(jugador_actual,ficha_a_mover,posicion_elegida);
+
 				}
 				//en las primeras 6 fichas se ejecuta
 				//esto

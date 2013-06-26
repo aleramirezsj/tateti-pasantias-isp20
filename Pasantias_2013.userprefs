@@ -1,19 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="tateti_isp20/Tablero.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="tateti_isp20/Main.cs">
     <Files>
-      <File FileName="tateti_isp20/Tablero.cs" Line="6" Column="22" />
-      <File FileName="tateti_isp20/Main.cs" Line="24" Column="6" />
-      <File FileName="tateti_isp20/Juego.cs" Line="9" Column="23" />
-      <File FileName="tateti_isp20/Jugador.cs" Line="15" Column="6" />
-      <File FileName="tarea_ubicua_n1/Main.cs" Line="1" Column="1" />
+      <File FileName="tateti_isp20/Tablero.cs" Line="12" Column="4" />
+      <File FileName="tateti_isp20/Main.cs" Line="26" Column="6" />
+      <File FileName="tateti_isp20/Juego.cs" Line="216" Column="23" />
+      <File FileName="tateti_isp20/Jugador.cs" Line="16" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="tarea_ubicua_n1" expanded="True" />
           <Node name="tateti_isp20" expanded="True">
-            <Node name="Tablero.cs" selected="True" />
+            <Node name="Main.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -23,7 +22,11 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/alumno/Desarrollo/Pasantias_c#/Pasantias_2013/tateti_isp20/Juego.cs" line="84" />
+      <Breakpoint file="/home/alumno/Desarrollo/Pasantias_c#/Pasantias_2013/tateti_isp20/Juego.cs" line="210" />
+      <Breakpoint file="/home/alumno/Desarrollo/Pasantias_c#/Pasantias_2013/tateti_isp20/Main.cs" line="25" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
