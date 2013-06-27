@@ -16,6 +16,14 @@ namespace tateti_isp20
 			for (int i=1; i<10; i++) 
 				posiciones.Add(i,"  ");
 		}
+		public bool ControlPosicionVacia (int posicion)
+		{
+			if (posiciones [posicion] == "  ") 
+			{
+				return true;
+			}
+			return false;
+		}
 		public void Limpiar ()
 		{
 			for (int i=1; i<10; i++) 

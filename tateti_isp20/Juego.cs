@@ -132,35 +132,44 @@ namespace tateti_isp20
 				Console.ReadLine();
 			}*/
 		}
-		public void SeleccionarPosicion (int jugador, int ficha, ref int posicion_elegida)
+		public int SeleccionarPosicion (int jugador, int ficha)
 		{
-			Console.Write ("Jugador {0}: ingrese la posicion de la ficha {1}:", jugador, ficha);
-			try {
-				posicion_elegida = Convert.ToInt32 (Console.ReadLine ());
-			} catch {
-				Console.WriteLine ("Error, valor incorrecto presione una tecla para continuar");
-				Console.ReadKey ();
-				SeleccionarPosicion (jugador, ficha, ref posicion_elegida);
-			}
-			if (posicion_elegida > 9 || posicion_elegida < 1) {
-				Console.WriteLine ("Error, valor incorrecto presione una tecla para continuar");
-				Console.ReadKey ();
-				SeleccionarPosicion (jugador, ficha, ref posicion_elegida);
-			}
-			if (!ComprobarPosicionVacia (posicion_elegida)) 
+			int posicion_elegida=0;
+			do 
 			{
-				Console.WriteLine ("Error, posicion elegida ya está en uso");
-				Console.ReadKey ();
-				SeleccionarPosicion (jugador, ficha, ref posicion_elegida);
-			}
-			if (!ComprobarMovimientoValido (posicion_elegida, jugador, ficha)) 
-			{
-				Console.WriteLine ("Error, movimiento no válido");
-				Console.ReadKey ();
-				SeleccionarPosicion (jugador, ficha, ref posicion_elegida);
-			}
+				Console.Write ("Jugador {0}: ingrese posición para la ficha {1}:", jugador, ficha);
+				try
+				{
+					posicion_elegida = Convert.ToInt32 (Console.ReadLine ());
+				}
+				catch
+				{
+					posicion_elegida=0;
+					Console.WriteLine("Error, se esperaba que ingrese un valor");
+				}
 
+				if (posicion_elegida<1 || posicion_elegida>9)
+				{
+					Console.WriteLine("Error, posición no válida");
+					Console.ReadLine();
+				}
+				if (!tablero.ControlPosicionVacia(posicion_elegida))
+				{
+					Console.WriteLine("Error, posición ocupada");
+					Console.ReadLine();
+					posicion_elegida=0;
+				}
+				if (!ComprobarMovimientoValido (posicion_elegida, jugador, ficha)) 
+				{
+					Console.WriteLine ("Error, movimiento no válido");
+					Console.ReadKey ();
+					posicion_elegida=0;
+				}
+			}while(posicion_elegida < 1 || posicion_elegida > 9);
+
+			return posicion_elegida;
 		}
+
 		public bool ComprobarMovimientoValido (int posicion_elegida, int jugador, int ficha)
 		{
 			int posicion_previa=0;
@@ -198,24 +207,33 @@ namespace tateti_isp20
 
 			return true;
 		}
-		public void SeleccionarFicha (int jugador_actual, ref int ficha_a_mover)
+		public int SeleccionarFicha (int jugador)
 		{
-
-			Console.Write ("Jugador {0}: ingrese el nro de ficha a mover:", jugador_actual);
-			try {
-				ficha_a_mover = Convert.ToInt32 (Console.ReadLine ());
-			} catch {
-				Console.WriteLine ("Error, valor incorrecto presione una tecla para continuar");
-				Console.ReadKey ();
-				SeleccionarFicha (jugador_actual, ref ficha_a_mover);
-			}
-			if (ficha_a_mover > 3 || ficha_a_mover < 1) 
+			int ficha_a_mover=0;
+			do
 			{
-				Console.WriteLine ("Error, valor incorrecto presione una tecla para continuar");
-				Console.ReadKey ();
-				SeleccionarFicha (jugador_actual, ref ficha_a_mover);
-			}
 
+				Console.Write("Jugador {0}: ingrese el nro de ficha a mover:",jugador);
+
+				try
+				{
+					ficha_a_mover= Convert.ToInt32(Console.ReadLine());
+				}
+
+				catch
+				{
+					ficha_a_mover=0;
+					Console.WriteLine("Error, se esperaba que ingrese un valor");
+				}
+				//
+				if(ficha_a_mover<1||ficha_a_mover>3)
+				{
+					Console.WriteLine("Error, número de ficha no válido");
+					Console.ReadLine();
+				}
+			}while (ficha_a_mover<1||ficha_a_mover>3);
+
+			return ficha_a_mover;
 		}
 		public void Jugar (int jugador, int nroficha, int pos_elegida)
 		{

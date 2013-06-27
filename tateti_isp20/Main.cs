@@ -11,8 +11,6 @@ namespace tateti_isp20
 			//variables auxiliares necesarias
 			int jugador_actual=1;
 			int ficha_actual=1;
-			int ficha_a_mover=0;
-			int posicion_elegida=0;
 
 			while (true) 
 			{
@@ -27,8 +25,8 @@ namespace tateti_isp20
 				//pide definir la ficha a mover
 				if (ficha_actual==0)
 				{
-					juego.SeleccionarFicha(jugador_actual, ref ficha_a_mover);
-					juego.SeleccionarPosicion(jugador_actual,ficha_a_mover,ref posicion_elegida);
+					int ficha_a_mover=juego.SeleccionarFicha(jugador_actual);
+					int posicion_elegida=juego.SeleccionarPosicion(jugador_actual,ficha_a_mover);
 					juego.Jugar(jugador_actual,ficha_a_mover,posicion_elegida);
 
 				}
@@ -36,7 +34,7 @@ namespace tateti_isp20
 				//esto
 				else
 				{
-					juego.SeleccionarPosicion(jugador_actual,ficha_actual, ref posicion_elegida);
+					int posicion_elegida=juego.SeleccionarPosicion(jugador_actual,ficha_actual);
 					//almacenar el movimiento en el tablero y en las fichas
 					//del jugador
 					//Console.WriteLine("posicion elegida vale {0}", posicion_elegida);
