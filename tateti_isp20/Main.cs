@@ -17,7 +17,7 @@ namespace tateti_isp20
 				juego.PintarTablero();
 				if (juego.ComprobarGanador ()) 
 				{
-					Console.WriteLine ("Hay un ganador");
+					//Console.WriteLine ("Hay un ganador");
 					Console.ReadLine();
 					return;
 				}

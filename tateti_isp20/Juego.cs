@@ -53,6 +53,7 @@ namespace tateti_isp20
 			movimientos_validos[9,1]=8;
 			movimientos_validos[9,2]=5;
 			movimientos_validos[9,3]=6;
+            //jugadas_ganadoras[nro_jugada,nro_ficha]=posicion_ficha
 			jugadas_ganadoras[0,0]=1;
 			jugadas_ganadoras[0,1]=2;
 			jugadas_ganadoras[0,2]=3;
@@ -101,14 +102,22 @@ namespace tateti_isp20
 					if(jugadas_ganadoras[jugada,ficha]==(int)jugador2.fichas[3])
 						acierto2++;
 				}
-				if (acierto1==3||acierto2==3)
-					return true;
-				else
-				{
-					//no hay un ganador que coincida con esta jugada
-					acierto1=0;
-					acierto2=0;
-				}
+				if (acierto1==3)
+                { 
+                    Console.WriteLine("ha ganado el jugador 1");
+                    return true;
+                }
+                if (acierto2 == 3)
+                {
+                    Console.WriteLine("ha ganado el jugador 2");
+                    return true;
+                }
+                else
+                {
+                    //no hay un ganador que coincida con esta jugada
+                    acierto1 = 0;
+                    acierto2 = 0;
+                }
 			}
 			return false;
 
