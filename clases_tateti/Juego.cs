@@ -220,21 +220,25 @@ namespace clases_tateti
             return true;
         }
       
-            SeleccionarFicha(int jugador, int posicion)
+        public int SeleccionarFicha(int jugador, int posicion)
         {
             if (jugador == 1)
             {
                 foreach (DictionaryEntry ficha in jugador1.fichas)
                 {
                     if ((int)ficha.Value == posicion)
-                        return true;
+                        return (int)ficha.Key;
                 }
             }
-            foreach (DictionaryEntry ficha in jugador2.fichas)
+            if (jugador == 2)
             {
-                tablero.posiciones[ficha.Value] = jugador1.tipo_ficha + ficha.Key.ToString();
+                foreach (DictionaryEntry ficha in jugador2.fichas)
+                {
+                    if ((int)ficha.Value == posicion)
+                        return (int)ficha.Key;
+                }
             }
-            return ficha_a_mover;
+            return 0;
         }
         public void Jugar(int jugador, int nroficha, int pos_elegida)
         {

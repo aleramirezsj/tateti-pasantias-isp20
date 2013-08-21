@@ -15,6 +15,7 @@ namespace tateti_visual
         private int jugador_actual;
         private int ficha_actual;
         private int ficha_a_mover;
+        private int ficha_seleccionada;
 
         public Juego juego; //**
 
@@ -32,6 +33,19 @@ namespace tateti_visual
         {
             lbl_jugador_actual.Text = jugador_actual.ToString();
             lbl_ficha_actual.Text = ficha_actual.ToString();
+            
+
+            pic1.BorderStyle = valor1;
+            pic2.BorderStyle = valor2;
+            pic3.BorderStyle = valor3;
+            pic4.BorderStyle = valor4;
+            pic5.BorderStyle = valor5;
+            pic6.BorderStyle = valor6;
+            pic7.BorderStyle = valor7;
+            pic8.BorderStyle = valor8;
+            pic9.BorderStyle = valor9;
+
+
         }
         private void Alternar_Jugador()
         {
@@ -44,10 +58,13 @@ namespace tateti_visual
         {
             if (jugador_actual==2)
             {
-                ficha_actual=ficha_actual+1;
-                if (ficha_actual==4)
+                if (ficha_actual > 0)
                 {
-                    ficha_actual=0;
+                    ficha_actual = ficha_actual + 1;
+                    if (ficha_actual == 4)
+                    {
+                        ficha_actual = 0;
+                    }
                 }
             }
         }
@@ -71,23 +88,45 @@ namespace tateti_visual
         {
 
         }
-
-        private void pic1_Click(object sender, EventArgs e)
+        private void Movimiento(int posicion_elegida, PictureBox pic)
         {
             if (ficha_actual == 0)
             {
-                int 
+                if (ficha_seleccionada == 0)
+                {
+                    ficha_seleccionada = juego.SeleccionarFicha(jugador_actual, posicion_elegida);
+                    if (ficha_seleccionada == 0)
+                    {
+                        MessageBox.Show("Error, no ha seleccionado una de sus fichas");
+                    }
+
+                }
+                else
+                {
+                    juego.Jugar(jugador_actual, ficha_seleccionada, posicion_elegida);
+                    Definir_Ficha_Proxima();
+                    Definir_Imagen(pic);
+                    Alternar_Jugador();
+                    ficha_seleccionada = 0;
+                    Actualizar_Pantalla();
+                    
+                }
             }
             else
             {
-                int posicion_elegida = 1;
+
                 juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
                 Definir_Ficha_Proxima();
-                Definir_Imagen(pic1);
+                Definir_Imagen(pic);
                 Alternar_Jugador();
                 Actualizar_Pantalla();
             }
-            
+
+        }
+        private void pic1_Click(object sender, EventArgs e)
+        {
+            Movimiento(1, pic1);
+            int algo = 0;
         }
         private void Definir_Imagen(PictureBox pic)
         {
@@ -99,90 +138,50 @@ namespace tateti_visual
 
         private void pic2_Click(object sender, EventArgs e)
         {
-            int posicion_elegida = 2;
-            juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
-            Definir_Ficha_Proxima();
-            Definir_Imagen(pic2);
-            Alternar_Jugador();
-            Actualizar_Pantalla();
+            Movimiento(2, pic2);
             
         }
 
         private void pic3_Click(object sender, EventArgs e)
         {
-            int posicion_elegida = 3;
-            juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
-            Definir_Ficha_Proxima();
-            Definir_Imagen(pic3);
-            Alternar_Jugador();
-            Actualizar_Pantalla();
+            Movimiento(3, pic3);
             
         }
 
         private void pic4_Click(object sender, EventArgs e)
         {
-            int posicion_elegida = 4;
-            juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
-            Definir_Ficha_Proxima();
-            Definir_Imagen(pic4);
-            Alternar_Jugador();
-            Actualizar_Pantalla();
+            Movimiento(4, pic4);
            
         }
 
         private void pic5_Click(object sender, EventArgs e)
         {
-            int posicion_elegida = 5;
-            juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
-            Definir_Ficha_Proxima();
-            Definir_Imagen(pic5);
-            Alternar_Jugador();
-            Actualizar_Pantalla();
+            Movimiento(5, pic5);
             
         }
 
         private void pic6_Click(object sender, EventArgs e)
         {
-            int posicion_elegida = 6;
-            juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
-            Definir_Ficha_Proxima();
-            Definir_Imagen(pic6);
-            Alternar_Jugador();
-            Actualizar_Pantalla();
+            Movimiento(6, pic6);
             
         }
 
         private void pic7_Click(object sender, EventArgs e)
         {
-            int posicion_elegida = 7;
-            juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
-            Definir_Ficha_Proxima();
-            Definir_Imagen(pic7);
-            Alternar_Jugador();
-            Actualizar_Pantalla();
+            Movimiento(7, pic7);
             
             
         }
 
         private void pic8_Click(object sender, EventArgs e)
         {
-            int posicion_elegida = 8;
-            juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
-            Definir_Ficha_Proxima();
-            Definir_Imagen(pic8);
-            Alternar_Jugador();
-            Actualizar_Pantalla();
+            Movimiento(8, pic8);
             
         }
 
         private void pic9_Click(object sender, EventArgs e)
         {
-            int posicion_elegida = 9;
-            juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
-            Definir_Ficha_Proxima();
-            Definir_Imagen(pic9);
-            Alternar_Jugador();
-            Actualizar_Pantalla();
+            Movimiento(9, pic9);
             
         }
     }
