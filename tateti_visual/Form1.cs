@@ -16,6 +16,7 @@ namespace tateti_visual
         private int ficha_actual;
         private int ficha_a_mover;
         private int ficha_seleccionada;
+        
 
         public Juego juego; //**
 
@@ -33,19 +34,22 @@ namespace tateti_visual
         {
             lbl_jugador_actual.Text = jugador_actual.ToString();
             lbl_ficha_actual.Text = ficha_actual.ToString();
-            
-
-            pic1.BorderStyle = valor1;
-            pic2.BorderStyle = valor2;
-            pic3.BorderStyle = valor3;
-            pic4.BorderStyle = valor4;
-            pic5.BorderStyle = valor5;
-            pic6.BorderStyle = valor6;
-            pic7.BorderStyle = valor7;
-            pic8.BorderStyle = valor8;
-            pic9.BorderStyle = valor9;
-
-
+            foreach (PictureBox pic in this.Controls.OfType<PictureBox>())
+            {
+                    pic.BorderStyle = BorderStyle.None;
+            }
+        }
+        private void Actualizar_Pantalla(PictureBox pic_seleccionada)
+        {
+            lbl_jugador_actual.Text = jugador_actual.ToString();
+            lbl_ficha_actual.Text = ficha_actual.ToString();
+            //utilizo el método OfType para obtener los picturebox que tiene
+            //el formulario, para borrarles el borde que puedan tener establecido
+            foreach (PictureBox pic in this.Controls.OfType<PictureBox>())
+            {
+                pic.BorderStyle = BorderStyle.None;
+            }
+            pic_seleccionada.BorderStyle = BorderStyle.Fixed3D;
         }
         private void Alternar_Jugador()
         {
@@ -99,7 +103,10 @@ namespace tateti_visual
                     {
                         MessageBox.Show("Error, no ha seleccionado una de sus fichas");
                     }
-
+                    else
+                    {
+                        Actualizar_Pantalla(pic);
+                    }
                 }
                 else
                 {
@@ -126,7 +133,7 @@ namespace tateti_visual
         private void pic1_Click(object sender, EventArgs e)
         {
             Movimiento(1, pic1);
-            int algo = 0;
+            
         }
         private void Definir_Imagen(PictureBox pic)
         {
