@@ -1,0 +1,5 @@
+C:\Users\Alumno\pasantias2013_isp20\clases_tateti\bin\Release\clases_tateti.dll
+C:\Users\Alumno\pasantias2013_isp20\clases_tateti\bin\Release\clases_tateti.pdb
+C:\Users\Alumno\pasantias2013_isp20\clases_tateti\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Alumno\pasantias2013_isp20\clases_tateti\obj\Release\clases_tateti.dll
+C:\Users\Alumno\pasantias2013_isp20\clases_tateti\obj\Release\clases_tateti.pdb

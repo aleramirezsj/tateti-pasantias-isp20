@@ -1,0 +1,11 @@
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\bin\Debug\tateti_visual.exe
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\bin\Debug\tateti_visual.pdb
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\bin\Debug\clases_tateti.dll
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\bin\Debug\clases_tateti.pdb
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\tateti_visual.tateti_frm.resources
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\tateti_visual.Properties.Resources.resources
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\tateti_visual.exe
+C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\tateti_visual.pdb
