@@ -1,0 +1,3 @@
+C:\Users\Alumno\pasantias2013_isp20\tarea_ubicua_n1\bin\Release\tarea_ubicua_n1.exe
+C:\Users\Alumno\pasantias2013_isp20\tarea_ubicua_n1\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Alumno\pasantias2013_isp20\tarea_ubicua_n1\obj\x86\Release\tarea_ubicua_n1.exe

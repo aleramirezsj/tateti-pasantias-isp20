@@ -58,7 +58,7 @@
             // 
             this.pic9.BackColor = System.Drawing.Color.Black;
             this.pic9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pic9.Location = new System.Drawing.Point(365, 351);
+            this.pic9.Location = new System.Drawing.Point(369, 347);
             this.pic9.Name = "pic9";
             this.pic9.Size = new System.Drawing.Size(54, 50);
             this.pic9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -71,7 +71,7 @@
             // 
             this.pic8.BackColor = System.Drawing.Color.Black;
             this.pic8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pic8.Location = new System.Drawing.Point(227, 351);
+            this.pic8.Location = new System.Drawing.Point(227, 354);
             this.pic8.Name = "pic8";
             this.pic8.Size = new System.Drawing.Size(54, 50);
             this.pic8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -123,7 +123,7 @@
             // 
             this.pic4.BackColor = System.Drawing.Color.Black;
             this.pic4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pic4.Location = new System.Drawing.Point(83, 201);
+            this.pic4.Location = new System.Drawing.Point(85, 201);
             this.pic4.Name = "pic4";
             this.pic4.Size = new System.Drawing.Size(54, 50);
             this.pic4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -150,7 +150,7 @@
             this.pic1.BackColor = System.Drawing.Color.Black;
             this.pic1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pic1.ErrorImage = null;
-            this.pic1.Location = new System.Drawing.Point(83, 55);
+            this.pic1.Location = new System.Drawing.Point(85, 55);
             this.pic1.Name = "pic1";
             this.pic1.Size = new System.Drawing.Size(54, 50);
             this.pic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,7 +180,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(440, 408);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Tag = "Fondo";
             // 
             // lblturnojuego
             // 
@@ -200,7 +200,6 @@
             this.lbl_jugador_actual.Name = "lbl_jugador_actual";
             this.lbl_jugador_actual.Size = new System.Drawing.Size(0, 108);
             this.lbl_jugador_actual.TabIndex = 11;
-            this.lbl_jugador_actual.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -242,7 +241,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "tateti_frm";
             this.Text = "Tateti Visual ISP20";
-            this.Load += new System.EventHandler(this.tateti_frm_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.pic9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic7)).EndInit();

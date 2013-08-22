@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using clases_tateti;
+using System.Collections;
 
 namespace tateti_visual
 {
@@ -16,6 +17,7 @@ namespace tateti_visual
         private int ficha_actual;
         private int ficha_a_mover;
         private int ficha_seleccionada;
+        private Hashtable pictures;
         
 
         public Juego juego; //**
@@ -26,8 +28,20 @@ namespace tateti_visual
             ficha_actual = 1;
             //construye la parte gráfica
             InitializeComponent();
-            Actualizar_Pantalla();
+            
             juego = new Juego();
+            pictures = new Hashtable();
+            pictures.Add(1, pic1);
+            pictures.Add(2, pic2);
+            pictures.Add(3, pic3);
+            pictures.Add(4, pic4);
+            pictures.Add(5, pic5);
+            pictures.Add(6, pic6);
+            pictures.Add(7, pic7);
+            pictures.Add(8, pic8);
+            pictures.Add(9, pic9);
+            Actualizar_Pantalla();
+
         }
 
         private void Actualizar_Pantalla()
@@ -36,8 +50,12 @@ namespace tateti_visual
             lbl_ficha_actual.Text = ficha_actual.ToString();
             foreach (PictureBox pic in this.Controls.OfType<PictureBox>())
             {
-                    pic.BorderStyle = BorderStyle.None;
+                pic.BorderStyle = BorderStyle.None;
+                if (pic.Tag.ToString() != "Fondo")
+                    pic.Image = null;
+                
             }
+            Actualizar_Tablero();
         }
         private void Actualizar_Pantalla(PictureBox pic_seleccionada)
         {
@@ -48,8 +66,40 @@ namespace tateti_visual
             foreach (PictureBox pic in this.Controls.OfType<PictureBox>())
             {
                 pic.BorderStyle = BorderStyle.None;
+                if (pic.Tag.ToString()!="Fondo")
+                    pic.Image = null;
+                
             }
             pic_seleccionada.BorderStyle = BorderStyle.Fixed3D;
+            Actualizar_Tablero();
+
+        }
+
+        private void Actualizar_Tablero()
+        {
+            foreach (DictionaryEntry ficha in juego.jugador1.fichas)
+            {
+                foreach (DictionaryEntry entrada_pic in pictures)
+                {
+                    if (entrada_pic.Key.ToString() == ficha.Value.ToString())
+                    {
+                        PictureBox imagen=(PictureBox)entrada_pic.Value;
+                        imagen.Image=tateti_visual.Properties.Resources.equis;
+                    }
+                }
+
+            }
+            foreach (DictionaryEntry ficha in juego.jugador2.fichas)
+            {
+                foreach (DictionaryEntry entrada_pic in pictures)
+                {
+                    if (entrada_pic.Key.ToString() == ficha.Value.ToString())
+                    {
+                        PictureBox imagen = (PictureBox)entrada_pic.Value;
+                        imagen.Image = tateti_visual.Properties.Resources.la_o;
+                    }
+                }
+            }
         }
         private void Alternar_Jugador()
         {
@@ -73,61 +123,72 @@ namespace tateti_visual
             }
         }
 
-        private void tateti_frm_Load(object sender, EventArgs e)
-        {
 
-        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            pic9.Image = tateti_visual.Properties.Resources.la_o;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
         private void Movimiento(int posicion_elegida, PictureBox pic)
         {
-            if (ficha_actual == 0)
+            int ganador=juego.ComprobarGanador();
+            if (ganador==0)
             {
-                if (ficha_seleccionada == 0)
+                if (ficha_actual == 0)
                 {
-                    ficha_seleccionada = juego.SeleccionarFicha(jugador_actual, posicion_elegida);
                     if (ficha_seleccionada == 0)
                     {
-                        MessageBox.Show("Error, no ha seleccionado una de sus fichas");
+                        ficha_seleccionada = juego.SeleccionarFicha(jugador_actual, posicion_elegida);
+                        if (ficha_seleccionada == 0)
+                        {
+                            MessageBox.Show("Error, no ha seleccionado una de sus fichas");
+                        }
+                        else
+                        {
+                            Actualizar_Pantalla(pic);
+                        }
                     }
                     else
                     {
-                        Actualizar_Pantalla(pic);
+                        if (juego.ComprobarMovimientoValido(posicion_elegida, jugador_actual, ficha_seleccionada))
+                        {
+                            if (juego.ComprobarPosicionVacia(posicion_elegida))
+                            {
+                                juego.Jugar(jugador_actual, ficha_seleccionada, posicion_elegida);
+                                Definir_Ficha_Proxima();
+                                //Definir_Imagen(pic);
+                                Alternar_Jugador();
+                                ficha_seleccionada = 0;
+                                Actualizar_Pantalla();
+                            }
+                            else
+                                MessageBox.Show("Debes seleccionar un lugar vacío");
+                        }
+                        else
+                            MessageBox.Show("Has intentado un movimiento no válido");
+
                     }
                 }
                 else
                 {
-                    juego.Jugar(jugador_actual, ficha_seleccionada, posicion_elegida);
-                    Definir_Ficha_Proxima();
-                    Definir_Imagen(pic);
-                    Alternar_Jugador();
-                    ficha_seleccionada = 0;
-                    Actualizar_Pantalla();
-                    
+                    if (juego.ComprobarPosicionVacia(posicion_elegida))
+                    {
+                        juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
+                        Definir_Ficha_Proxima();
+                        //Definir_Imagen(pic);
+                        Alternar_Jugador();
+                        Actualizar_Pantalla();
+                    }
+                    else
+                        MessageBox.Show("Debes seleccionar un lugar vacío");
                 }
+                ganador = juego.ComprobarGanador();
+                if (ganador != 0)
+                    MessageBox.Show("Ha ganado el jugador N°" + ganador.ToString());
             }
             else
             {
-
-                juego.Jugar(jugador_actual, ficha_actual, posicion_elegida);
-                Definir_Ficha_Proxima();
-                Definir_Imagen(pic);
-                Alternar_Jugador();
-                Actualizar_Pantalla();
+                MessageBox.Show("Ha ganado el jugador N°" + ganador.ToString());
             }
+            
 
         }
         private void pic1_Click(object sender, EventArgs e)
@@ -191,5 +252,9 @@ namespace tateti_visual
             Movimiento(9, pic9);
             
         }
+
+
+
+
     }
 }

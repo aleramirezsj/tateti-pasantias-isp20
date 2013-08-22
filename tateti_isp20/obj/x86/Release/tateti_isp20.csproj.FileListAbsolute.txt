@@ -1,0 +1,3 @@
+C:\Users\Alumno\pasantias2013_isp20\tateti_isp20\bin\Release\tateti_isp20.exe
+C:\Users\Alumno\pasantias2013_isp20\tateti_isp20\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Alumno\pasantias2013_isp20\tateti_isp20\obj\x86\Release\tateti_isp20.exe

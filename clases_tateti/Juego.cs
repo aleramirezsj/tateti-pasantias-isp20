@@ -6,8 +6,8 @@ namespace clases_tateti
     public class Juego
     {
         public Tablero tablero;
-        private Jugador jugador1;
-        private Jugador jugador2;
+        public Jugador jugador1;
+        public Jugador jugador2;
         int[,] movimientos_validos;
         int[,] jugadas_ganadoras;
 
@@ -80,7 +80,7 @@ namespace clases_tateti
             jugadas_ganadoras[7, 2] = 6;
 
         }
-        public bool ComprobarGanador()
+        public int ComprobarGanador()
         {
             int acierto1 = 0;
             int acierto2 = 0;
@@ -104,13 +104,13 @@ namespace clases_tateti
                 }
                 if (acierto1 == 3)
                 {
-                    Console.WriteLine("ha ganado el jugador 1");
-                    return true;
+                    //retorna 1 para determinar que gano el jugador 1
+                    return 1;
                 }
                 if (acierto2 == 3)
                 {
-                    Console.WriteLine("ha ganado el jugador 2");
-                    return true;
+                    //retorna 2 para determinar que gano el jugador 2
+                    return 2;
                 }
                 else
                 {
@@ -119,7 +119,8 @@ namespace clases_tateti
                     acierto2 = 0;
                 }
             }
-            return false;
+            //retorna 0 para determinar que todavía no gano nadie
+            return 0;
 
 
         }
