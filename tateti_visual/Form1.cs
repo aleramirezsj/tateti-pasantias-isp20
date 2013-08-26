@@ -148,22 +148,41 @@ namespace tateti_visual
                     }
                     else
                     {
-                        if (juego.ComprobarMovimientoValido(posicion_elegida, jugador_actual, ficha_seleccionada))
+                        if (!juego.ComprobarPosicionVacia(posicion_elegida))
                         {
-                            if (juego.ComprobarPosicionVacia(posicion_elegida))
+                            int otra_ficha_seleccionada = juego.SeleccionarFicha(jugador_actual, posicion_elegida);
+                            if (otra_ficha_seleccionada == 0)
                             {
-                                juego.Jugar(jugador_actual, ficha_seleccionada, posicion_elegida);
-                                Definir_Ficha_Proxima();
-                                //Definir_Imagen(pic);
-                                Alternar_Jugador();
-                                ficha_seleccionada = 0;
-                                Actualizar_Pantalla();
+                                MessageBox.Show("Error, no ha seleccionado una de sus fichas");
                             }
                             else
-                                MessageBox.Show("Debes seleccionar un lugar vacío");
+                            {
+                                ficha_seleccionada = otra_ficha_seleccionada;
+                                Actualizar_Pantalla(pic);
+                            }
                         }
                         else
-                            MessageBox.Show("Has intentado un movimiento no válido");
+                        {
+                            if (juego.ComprobarMovimientoValido(posicion_elegida, jugador_actual, ficha_seleccionada))
+                            {
+                                if (juego.ComprobarPosicionVacia(posicion_elegida))
+                                {
+                                    juego.Jugar(jugador_actual, ficha_seleccionada, posicion_elegida);
+                                    Definir_Ficha_Proxima();
+                                    //Definir_Imagen(pic);
+                                    Alternar_Jugador();
+                                    ficha_seleccionada = 0;
+                                    Actualizar_Pantalla();
+                                }
+                                else
+                                {
+
+                                    MessageBox.Show("Debes seleccionar un lugar vacío");
+                                }
+                            }
+                            else
+                                MessageBox.Show("Has intentado un movimiento no válido");
+                        }
 
                     }
                 }
