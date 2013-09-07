@@ -1,0 +1,9 @@
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\biblioteca\bin\Debug\biblioteca.exe
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\biblioteca\bin\Debug\biblioteca.pdb
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\biblioteca\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\biblioteca\obj\x86\Debug\biblioteca.alta_libro.resources
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\biblioteca\obj\x86\Debug\biblioteca.Properties.Resources.resources
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\biblioteca\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\biblioteca\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\biblioteca\obj\x86\Debug\biblioteca.exe
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\biblioteca\obj\x86\Debug\biblioteca.pdb

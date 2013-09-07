@@ -9,3 +9,5 @@ C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\GenerateResource
 C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\tateti_visual.exe
 C:\Users\Alumno\pasantias2013_isp20\tateti_visual\obj\x86\Debug\tateti_visual.pdb
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\tateti_visual\obj\x86\Debug\tateti_visual.exe
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\tateti_visual\obj\x86\Debug\tateti_visual.pdb

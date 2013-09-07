@@ -1,0 +1,12 @@
+C:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\bin\Debug\Calculadora.exe
+C:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\bin\Debug\Calculadora.pdb
+C:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\obj\x86\Debug\Calculadora.exe
+C:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\obj\x86\Debug\Calculadora.pdb
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\bin\Debug\Calculadora.exe
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\bin\Debug\Calculadora.pdb
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\obj\x86\Debug\Calculadora.exe
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013\Calculadora\obj\x86\Debug\Calculadora.pdb
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013_\Calculadora\obj\x86\Debug\Calculadora.exe
+E:\Archivos Personales\LABURO\ISP20\PASANTIAS_2013\PASANTIAS_2013_\Calculadora\obj\x86\Debug\Calculadora.pdb
